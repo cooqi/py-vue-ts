@@ -89,7 +89,7 @@ def login():
             session['name'] = name
             session['u_id'] = user.u_id
             session.permanent = True
-            return jsonify({'code': 200, 'token': "123456",'msg':''})
+            return jsonify({'code': 200, 'token': "123456",'msg':'登录成功'})
         else:
             return jsonify({'code': 201, 'msg': '用户名或密码错误'})
     else:
@@ -119,7 +119,41 @@ def addWork():
         db.session.commit()
         return jsonify({'code': 200, 'msg': '添加成功'})
 
+@APP.route('/workList', methods=['GET'])
+@swag_from('YMLS/workList.yml')
+def workList():
+    status = request.args.get('status', default='')
+    page_index = request.args.get('pageIndex', default=1)
+    page_size = request.args.get('pageSize', default=10)
+    all=Works.query.all()
+    if status=='':
+        work = Works.query.filter().paginate(int(page_index), int(page_size), False)
+    else:
+        work = Works.query.filter(Works.status == status).paginate(int(page_index), int(page_size), False)
 
+    if work:
+        payload = []
+        content = {}
+        for result in work.items:
+            times = ''
+            if result.creat_time:
+                times = result.creat_time.strftime("%Y-%m-%d %H:%M:%S")
+                end_time = result.end_time.strftime("%Y-%m-%d")
+                start_time = result.start_time.strftime("%Y-%m-%d")
+            content = {'id': result.id,
+                        'prj_info':result.prj_info,
+                       'start_time': start_time,
+                       'end_time': end_time,
+                       'tags': result.tags,
+                       'url': result.url,
+                       'self_work': result.self_work,
+                       'status': result.status,
+                       'creat_time': times}
+            payload.append(content)
+            content = {}
+        t = {'code': 200, 'data': payload, 'msg': '', 'pageIndex': page_index, 'total': len(all)}
+        return jsonify(t)
+    return jsonify({'code': 201, 'msg': '请求失败'})
 
 if __name__ == '__main__':
     # 开启 debug模式，这样我们就不用每更改一次文件，就重新启动一次服务
