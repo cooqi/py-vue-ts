@@ -1,0 +1,21 @@
+登录
+    ---
+    tags:
+      - user API
+    parameters:
+      - name: username
+        type: string
+        required: true
+        description: 用户名
+      - name: password
+        type: string
+        required: true
+        description: 密码
+    responses:
+      201:
+        description: 失败!
+      200:
+        description: 成功
+        examples:
+          Data: "{code:200,data:{},msg:''}"
+
