@@ -67,6 +67,7 @@ class Self(db.Model):
     work_position = db.Column(db.String(200), nullable=False)
     self_work_intro = db.Column(db.String(200), nullable=False)
     github= db.Column(db.String(200), nullable=False)
+    work_year=db.Column(db.String(200), nullable=False)
     edit_time = db.Column(db.DateTime, default=datetime.now())
 
 
@@ -310,6 +311,7 @@ def selfEdit():
     work_position = request.form.get('work_position')
     self_work_intro = request.form.get('self_work_intro')
     github=request.form.get('github')
+    work_year=request.form.get('work_year')
 
     self =Self.query.first()
     self.name=name
@@ -318,6 +320,7 @@ def selfEdit():
     self.work_position = work_position
     self.self_work_intro=self_work_intro
     self.github=github
+    self.work_year=work_year
     self.edit_time=datetime.now()
 
     db.session.commit()
@@ -335,7 +338,8 @@ def selfDetail():
             'self_introduction': self.self_introduction,
             'work_position':self. work_position,
             'self_work_intro':self.self_work_intro,
-            'github':self.github
+            'github':self.github,
+            'work_year':self.work_year
         }
         t = {'code': 200, 'data': content, 'msg': ''}
         return jsonify(t)

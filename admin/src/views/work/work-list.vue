@@ -26,7 +26,7 @@
         <Table :columns="columns10" :data="data" :loading="loading" @on-selection-change="selectChange"></Table>
         <div style="margin: 10px;overflow: hidden">
             <div style="float: right;">
-                <Page :total="total" :current="current" :page-size="pageSize" @on-change="changePage"></Page>
+                <Page :total="total" :current="current" show-total :page-size="pageSize" @on-change="changePage"></Page>
             </div>
         </div>
     </div>

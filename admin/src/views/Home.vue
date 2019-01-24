@@ -57,7 +57,7 @@
           <div class="layout-logo">cooqihuang</div>
           <div class="layout-nav">
             <MenuItem name="1" to="login">
-              <Icon type="ios-navigate"></Icon>
+              <Icon type="ios-paper-plane"></Icon>
               退出
             </MenuItem>
           </div>
@@ -71,11 +71,11 @@
               <span>个人作品</span>
             </MenuItem>
             <MenuItem name="2" to="self">
-              <Icon type="search"></Icon>
+              <Icon type="ios-star"></Icon>
               <span>个人信息</span>
             </MenuItem>
             <MenuItem name="3" to="tag">
-              <Icon type="settings"></Icon>
+              <Icon type="ios-bookmark"></Icon>
               <span>Tag管理</span>
             </MenuItem>
           </Menu>
