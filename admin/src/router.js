@@ -4,6 +4,7 @@ const Login = () => import ('@/views/login');
 const Home = () => import ('@/views/Home');
 const Works = () => import ('@/views/work/work-list');
 const WorksAdd = () => import ('@/views/work/work-add');
+const WorksEdit = () => import ('@/views/work/work-edit');
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ let router = new Router({
             name: 'worksAdd',
             component: WorksAdd,
             meta: { title: '添加作品',key:'1' },
+        },{
+            path: '/worksEdit',
+            name: 'worksEdit',
+            component: WorksEdit,
+            meta: { title: '编辑作品',key:'1' },
         }
         ],
         redirect: '/works'
