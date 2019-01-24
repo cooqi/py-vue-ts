@@ -52,6 +52,23 @@ class Works(db.Model):
 
     #验证token
 
+class Tag(db.Model):
+    __tablename__ = 'tags'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    tag_name = db.Column(db.String(200), nullable=False)
+    creat_time = db.Column(db.DateTime, default=datetime.now())
+
+class Self(db.Model):
+    __tablename__ = 'selfinfo'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String(200), nullable=False)
+    email = db.Column(db.String(200), nullable=False)
+    self_introduction = db.Column(db.String(200), nullable=False)
+    work_position = db.Column(db.String(200), nullable=False)
+    self_work_intro = db.Column(db.String(200), nullable=False)
+    github= db.Column(db.String(200), nullable=False)
+    edit_time = db.Column(db.DateTime, default=datetime.now())
+
 
 @APP.route("/")
 def home():
@@ -154,10 +171,10 @@ def workList():
     page_index = request.args.get('pageIndex', default=1)
     page_size = request.args.get('pageSize', default=10)
     if status=='':
-        work = Works.query.filter().paginate(int(page_index), int(page_size), False)
+        work = Works.query.filter().order_by(Works.creat_time.desc()).paginate(int(page_index), int(page_size), False)
         all = Works.query.all()
     else:
-        work = Works.query.filter(Works.status == status).paginate(int(page_index), int(page_size), False)
+        work = Works.query.filter(Works.status == status).order_by(Works.creat_time.desc()).paginate(int(page_index), int(page_size), False)
         all = Works.query.filter(Works.status == status).all()
 
     if work:
@@ -234,6 +251,96 @@ def workDetail():
         t = {'code': 200, 'data': content, 'msg': ''}
         return jsonify(t)
     return jsonify({'code': 201, 'msg': '请求失败'})
+
+
+@APP.route('/addTag', methods=['POST'])
+@swag_from('YMLS/register.yml')
+def addTag():
+    tag_name = request.form.get('tag_name')  # post请求模式，安排对象接收数据
+    if not tag_name:
+        return jsonify({'code': 201, 'msg': 'tag不能为空'})
+    tag = Tag.query.filter(Tag.tag_name == tag_name).first()  # 作查询，并判断
+    if tag:
+        return jsonify({'code': 201, 'msg': 'tag已存在'})
+    else:
+        user = Tag(tag_name=tag_name,creat_time=datetime.now())  # 将对象接收的数据赋到User类中,即存到数据库
+        db.session.add(user)  # 执行操作
+        db.session.commit()
+        return jsonify({'code': 200, 'msg': '添加成功'})
+
+@APP.route('/tagList', methods=['GET'])
+@swag_from('YMLS/register.yml')
+def tagList():
+    tag = Tag.query.order_by(Tag.creat_time.desc()).all()
+    if tag:
+        payload = []
+        for result in tag:
+            print(result)
+            creat_time = result.creat_time.strftime("%Y-%m-%d")
+            content = {
+                'id': result.id,
+                'creat_time': creat_time,
+                'tag_name': result.tag_name
+            }
+            payload.append(content)
+
+        t={'code': 200, 'data': payload, 'msg': ''}
+        return jsonify(t)
+    return jsonify({'code': 201,  'msg': '请求失败'})
+
+@APP.route('/tagDel', methods=['POST'])
+@swag_from('YMLS/register.yml')
+def tagDel():
+    id=request.form.get('id')
+    tag = Tag.query.filter(Tag.id == id).first()  # 作查询，并判断
+    if tag:
+        db.session.delete(tag)  # 执行操作
+        db.session.commit()
+        return jsonify({'code': 200, 'msg': '删除成功'})
+    else:
+        return jsonify({'code': 201, 'msg': 'id不存在'})
+
+
+@APP.route('/selfEdit', methods=['POST'])
+@swag_from('YMLS/register.yml')
+def selfEdit():
+    name = request.form.get('name')  # post请求模式，安排对象接收数据
+    email = request.form.get('email')
+    self_introduction = request.form.get('self_introduction')
+    work_position = request.form.get('work_position')
+    self_work_intro = request.form.get('self_work_intro')
+    github=request.form.get('github')
+
+    self =Self.query.first()
+    self.name=name
+    self.email = email
+    self.self_introduction = self_introduction
+    self.work_position = work_position
+    self.self_work_intro=self_work_intro
+    self.github=github
+    self.edit_time=datetime.now()
+
+    db.session.commit()
+    return jsonify({'code': 200, 'msg': '编辑成功'})
+
+
+@APP.route('/selfDetail', methods=['GET'])
+@swag_from('YMLS/register.yml')
+def selfDetail():
+    self = Self.query.first()
+    if self:
+        content={
+            'name': self.name,
+            'email': self.email,
+            'self_introduction': self.self_introduction,
+            'work_position':self. work_position,
+            'self_work_intro':self.self_work_intro,
+            'github':self.github
+        }
+        t = {'code': 200, 'data': content, 'msg': ''}
+        return jsonify(t)
+    return jsonify({'code': 201, 'msg': '请求失败'})
+
 
 if __name__ == '__main__':
     # 开启 debug模式，这样我们就不用每更改一次文件，就重新启动一次服务

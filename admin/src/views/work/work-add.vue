@@ -13,7 +13,7 @@
             <Input v-model="work.prj_info" placeholder="Enter projectName or baseInfo..." />
             <Input  v-model="work.url" placeholder="Enter project path url..."  />
             <Select v-model="tags" multiple >
-                <Option v-for="item in 10" :value="item" :key="item">{{ item }}</Option>
+                <Option v-for="item in tagsData" :value="item.tag_name" :key="item.tag_name">{{ item.tag_name }}</Option>
             </Select>
             <Input v-model="work.self_work" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter project detail info..." />
             <div style="margin-bottom: 20px">
@@ -38,6 +38,7 @@
         data() {
             return {
                 loading:false,
+                tagsData:[],
                 tags:[],
                 work:{
                     prj_info:'',
@@ -59,6 +60,15 @@
             },
             chooseStatus(v){
                 this.work.status=v?1:0
+            },
+            getTag(){
+                let _this=this
+                this.$api.get('/tagList',{})
+                    .then(function (res) {
+                        if(res.code==200){
+                            _this.tagsData=res.data
+                        }
+                    })
             },
             add(){
                 if(this.tags){
@@ -109,7 +119,7 @@
             }
         },
         mounted() {
-
+            this.getTag()
         },
         watch: {
             ''(to, from) {

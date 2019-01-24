@@ -53,12 +53,7 @@
             }
         },
         mounted() {
-
-        },
-        watch: {
-            ''(to, from) {
-
-            }
+            localStorage.clear()
         }
 
     }

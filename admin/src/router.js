@@ -5,6 +5,8 @@ const Home = () => import ('@/views/Home');
 const Works = () => import ('@/views/work/work-list');
 const WorksAdd = () => import ('@/views/work/work-add');
 const WorksEdit = () => import ('@/views/work/work-edit');
+const Tag = () => import ('@/views/tag/tag');
+const Self = () => import ('@/views/self/self-info');
 
 Vue.use(Router)
 
@@ -31,6 +33,16 @@ let router = new Router({
             name: 'worksEdit',
             component: WorksEdit,
             meta: { title: '编辑作品',key:'1' },
+        },{
+            path: '/tag',
+            name: 'tag',
+            component: Tag,
+            meta: { title: '标签管理',key:'3' },
+        },{
+            path: '/self',
+            name: 'self',
+            component: Self,
+            meta: { title: '个人信息',key:'2' },
         }
         ],
         redirect: '/works'
