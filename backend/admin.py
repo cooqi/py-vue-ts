@@ -102,7 +102,6 @@ def login():
     password = request.form['password']
     # 登录成功，则跳转到index页面
     user = User.query.filter(User.name == name).first()
-    print(user)
     if user:
         if user.check_password(password):
             session['name'] = name
@@ -209,7 +208,6 @@ def workList():
 def workDel():
     id=request.form.get('id')
     idArr=id.split(',')
-    print(idArr)
     work = Works.query.filter(Works.id.in_(idArr)).all()  # 作查询，并判断
     if work:
         for item in work:
@@ -276,7 +274,6 @@ def tagList():
     if tag:
         payload = []
         for result in tag:
-            print(result)
             creat_time = result.creat_time.strftime("%Y-%m-%d")
             content = {
                 'id': result.id,
