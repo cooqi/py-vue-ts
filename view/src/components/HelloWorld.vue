@@ -1,32 +1,61 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa" target="_blank" rel="noopener">pwa</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <div id="xhr">
+      <!--头-->
+      <div id="head">
+
+        <div id="eyes-part">
+          <div id="glasses">
+            <div class="glasses-left">
+              <div class="eyes-left"></div>
+            </div>
+            <div class="glasses-right">
+              <div class="eyes-right"></div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div><!--眼睛-->
+
+        <div id="mouth">
+          <ul id="teeth">
+            <li class="teeth-side teeth-side-left"></li>
+            <li></li>
+            <li></li>
+            <li class="teeth-side teeth-side-right"></li>
+          </ul><!--牙齿-->
+        </div><!--嘴巴-->
+
+      </div><!--头-->
+
+      <div id="yellowbody">
+        <div id="clothes">
+          <div class="clothes-top"></div>
+          <div class="clothes-bottom"></div>
+        </div><!--衣服-->
+
+
+        <div id="hand">
+          <div class="hand-left">
+            <div class="hand-left-palm"></div>
+          </div>
+          <div class="hand-right">
+            <div class="hand-right-palm"></div>
+          </div>
+        </div><!--手-->
+
+      </div><!--身体-->
+
+      <div id="footer">
+        <div class="leg"></div>
+        <div class="foot"></div>
+      </div><!--脚-->
+
+      <div class="welcome">
+        <h3>欢迎来到我的主页</h3>
+        <p>想了解更多，请点击查看我的作品集</p>
+        <p>*本页面所有图标均为css绘制</p>
+      </div>
+    </div><!--end-->
   </div>
 </template>
 
@@ -40,19 +69,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="less">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style>
+  @import '../assets/css/xhr.css';
 </style>

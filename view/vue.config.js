@@ -1,9 +1,9 @@
 module.exports = {
     publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
-    outputDir:'../distAdmin',
+    outputDir:'../distView',
     assetsDir: 'static',
     devServer:{
-        port:8027,
+        port:8028,
         host:'localhost',
         open:true
     },
