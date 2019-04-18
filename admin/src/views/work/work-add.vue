@@ -87,6 +87,7 @@
                             _this.$Modal.confirm({
                                 title: '添加成功',
                                 content: '<p>是否继续添加</p>',
+                                cancelText:'返回列表',
                                 loading: true,
                                 onOk: () => {
                                     setTimeout(() => {

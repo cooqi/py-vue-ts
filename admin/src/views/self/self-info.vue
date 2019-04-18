@@ -8,6 +8,7 @@
         <Input v-model="info.email" placeholder="Enter email..." style="width: 300px" />
         <Input v-model="info.work_position" placeholder="Enter work position..." style="width: 300px" />
         <Input v-model="info.github" placeholder="Enter github path..." style="width: 300px" />
+        <Input v-model="info.blog" placeholder="Enter blog path..." style="width: 300px" />
         <Input v-model="info.work_year" placeholder="Enter work time year..." style="width: 300px" />
         <Input v-model="info.self_introduction" placeholder="Enter self introduction..." type="textarea" :autosize="{minRows: 2,maxRows: 5}"  />
         <Input v-model="info.self_work_intro" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter self work intro..." />
@@ -29,6 +30,7 @@
                     work_position:'',
                     self_work_intro:'',
                     github:'',
+                    blog:'',
                     work_year:''
                 }
             }

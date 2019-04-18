@@ -15,8 +15,8 @@ from datetime import datetime
 
 # 通过 static_folder 指定静态资源路径，以便 index.html 能正确访问 CSS 等静态资源
 # template_folder 指定模板路径，以便 render_template 能正确渲染 index.html
-APP = Flask(
-    __name__, static_folder="../distAdmin/static", template_folder="../distAdmin")
+#APP = Flask(__name__, static_folder="../distView/static", template_folder="../distView")
+APP = Flask(__name__)
 
 CORS(APP)
 Swagger(APP)
@@ -72,99 +72,6 @@ class Self(db.Model):
     edit_time = db.Column(db.DateTime, default=datetime.now())
 
 
-@APP.route("/")
-def home():
-    '''
-        当在浏览器访问网址时，通过 render_template 方法渲染 dist 文件夹中的 index.html。
-        页面之间的跳转交给前端路由负责，后端不用再写大量的路由
-    '''
-    return render_template('index.html')
-
-@APP.route('/register', methods=['POST'])
-@swag_from('YMLS/register.yml')
-def register():
-    username = request.form.get('username')  # post请求模式，安排对象接收数据
-    password = request.form.get('password')
-    user = User.query.filter(User.name == username).first()  # 作查询，并判断
-    if user:
-        return jsonify({'code': 201, 'msg': '用户名已存在'})
-    else:
-        user = User(name=username, password=password,creat_time=datetime.now())  # 将对象接收的数据赋到User类中,即存到数据库
-        db.session.add(user)  # 执行操作
-        db.session.commit()
-        return jsonify({'code': 200, 'msg': '注册成功'})
-
-
-@APP.route('/login', methods=['POST'])
-@swag_from('YMLS/login.yml')
-def login():
-  if request.method == 'POST':
-    name=request.form['username']
-    password = request.form['password']
-    # 登录成功，则跳转到index页面
-    user = User.query.filter(User.name == name).first()
-    if user:
-        if user.check_password(password):
-            session['name'] = name
-            session['u_id'] = user.u_id
-            session.permanent = True
-            return jsonify({'code': 200, 'token': "123456",'msg':'登录成功'})
-        else:
-            return jsonify({'code': 201, 'msg': '用户名或密码错误'})
-    else:
-        return jsonify({'code': 201, 'msg': '用户名或密码错误'})
-
-  # 登录失败
-
-  return jsonify({'code': 203,'msg':'登录失败'})
-
-
-@APP.route('/addWork', methods=['POST'])
-@swag_from('YMLS/addWork.yml')
-def addWork():
-    prj_info = request.form.get('prj_info')  # post请求模式，安排对象接收数据
-    start_time = request.form.get('start_time')
-    end_time = request.form.get('end_time')
-    url = request.form.get('url')
-    tags = request.form.get('tags')
-    self_work = request.form.get('self_work')
-    status = request.form.get('status')
-    work = Works.query.filter(Works.prj_info == prj_info).first()  # 作查询，并判断
-    if work:
-        return jsonify({'code': 201, 'msg': '项目已存在'})
-    else:
-        works = Works(prj_info=prj_info,start_time=start_time,end_time=end_time,url=url,tags=tags,self_work=self_work,status=status,creat_time=datetime.now(),prj_img='')  # 将对象接收的数据赋到Works类中,即存到数据库
-        db.session.add(works)  # 执行操作
-        db.session.commit()
-        return jsonify({'code': 200, 'msg': '添加成功'})
-
-@APP.route('/editWork', methods=['POST'])
-@swag_from('YMLS/addWork.yml')
-def editWork():
-    id = request.form.get('id')
-    prj_info = request.form.get('prj_info')  # post请求模式，安排对象接收数据
-    start_time = request.form.get('start_time')
-    end_time = request.form.get('end_time')
-    url = request.form.get('url')
-    tags = request.form.get('tags')
-    self_work = request.form.get('self_work')
-    status = request.form.get('status')
-    work = Works.query.filter(Works.id == id).first()   # 作查询，并判断
-    if work:
-        work.prj_info = prj_info
-        work.start_time = start_time
-        work.end_time = end_time
-        work.url = url
-        work.tags = tags
-        work.self_work = self_work
-        work.status = status
-        work.edit_time = datetime.now()
-        work.prj_img = ''
-        db.session.commit()
-        return jsonify({'code': 200, 'msg': '编辑成功'})
-    else:
-        return jsonify({'code': 201, 'msg': '项目不存在'})
-
 @APP.route('/workList', methods=['GET'])
 @swag_from('YMLS/workList.yml')
 def workList():
@@ -204,32 +111,6 @@ def workList():
         return jsonify(t)
     return jsonify({'code': 201, 'msg': '请求失败'})
 
-@APP.route('/workDel', methods=['POST'])
-@swag_from('YMLS/workDel.yml')
-def workDel():
-    id=request.form.get('id')
-    idArr=id.split(',')
-    work = Works.query.filter(Works.id.in_(idArr)).all()  # 作查询，并判断
-    if work:
-        for item in work:
-            db.session.delete(item)
-        db.session.commit()
-        return jsonify({'code': 200, 'msg': '删除成功'})
-    else:
-        return jsonify({'code': 201, 'msg': 'id不存在'})
-
-@APP.route('/workStatusEdit', methods=['POST'])
-@swag_from('YMLS/workStatusEdit.yml')
-def workStatusEdit():
-    id = request.form.get('id')
-    work = Works.query.filter(Works.id == id).first()  # 作查询，并判断
-    if work:
-        work.status = not work.status
-        db.session.commit()
-        return jsonify({'code': 200, 'msg': '修改成功'})
-    else:
-        return jsonify({'code': 201, 'msg': '修改失败'})
-
 @APP.route('/workDetail', methods=['GET'])
 @swag_from('YMLS/workDetail.yml')
 def workDetail():
@@ -253,21 +134,6 @@ def workDetail():
     return jsonify({'code': 201, 'msg': '请求失败'})
 
 
-@APP.route('/addTag', methods=['POST'])
-@swag_from('YMLS/register.yml')
-def addTag():
-    tag_name = request.form.get('tag_name')  # post请求模式，安排对象接收数据
-    if not tag_name:
-        return jsonify({'code': 201, 'msg': 'tag不能为空'})
-    tag = Tag.query.filter(Tag.tag_name == tag_name).first()  # 作查询，并判断
-    if tag:
-        return jsonify({'code': 201, 'msg': 'tag已存在'})
-    else:
-        user = Tag(tag_name=tag_name,creat_time=datetime.now())  # 将对象接收的数据赋到User类中,即存到数据库
-        db.session.add(user)  # 执行操作
-        db.session.commit()
-        return jsonify({'code': 200, 'msg': '添加成功'})
-
 @APP.route('/tagList', methods=['GET'])
 @swag_from('YMLS/register.yml')
 def tagList():
@@ -286,45 +152,6 @@ def tagList():
         t={'code': 200, 'data': payload, 'msg': ''}
         return jsonify(t)
     return jsonify({'code': 201,  'msg': '请求失败'})
-
-@APP.route('/tagDel', methods=['POST'])
-@swag_from('YMLS/register.yml')
-def tagDel():
-    id=request.form.get('id')
-    tag = Tag.query.filter(Tag.id == id).first()  # 作查询，并判断
-    if tag:
-        db.session.delete(tag)  # 执行操作
-        db.session.commit()
-        return jsonify({'code': 200, 'msg': '删除成功'})
-    else:
-        return jsonify({'code': 201, 'msg': 'id不存在'})
-
-
-@APP.route('/selfEdit', methods=['POST'])
-@swag_from('YMLS/register.yml')
-def selfEdit():
-    name = request.form.get('name')  # post请求模式，安排对象接收数据
-    email = request.form.get('email')
-    self_introduction = request.form.get('self_introduction')
-    work_position = request.form.get('work_position')
-    self_work_intro = request.form.get('self_work_intro')
-    github=request.form.get('github')
-    blog = request.form.get('blog')
-    work_year=request.form.get('work_year')
-
-    self =Self.query.first()
-    self.name=name
-    self.email = email
-    self.self_introduction = self_introduction
-    self.work_position = work_position
-    self.self_work_intro=self_work_intro
-    self.github=github
-    self.blog=blog
-    self.work_year=work_year
-    self.edit_time=datetime.now()
-
-    db.session.commit()
-    return jsonify({'code': 200, 'msg': '编辑成功'})
 
 
 @APP.route('/selfDetail', methods=['GET'])
@@ -351,4 +178,4 @@ if __name__ == '__main__':
     # 开启 debug模式，这样我们就不用每更改一次文件，就重新启动一次服务
     # 设置 host='0.0.0.0'，让操作系统监听所有公网 IP
     # 也就是把自己的电脑作为服务器，可以让别人访问
-    APP.run(port=9002,debug=True, host='192.168.0.85')
+    APP.run(port=9003,debug=True, host='192.168.0.85')

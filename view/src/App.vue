@@ -6,7 +6,7 @@
 
 <style lang="less">
   @import "assets/css/comment.css";
-  body,html{width: 100%;height: 100%;padding: 0;margin: 0;min-width: 900px}
+  body,html{width: 100%;height: 100%;padding: 0;margin: 0;min-width: 1280px}
   *{box-sizing: border-box}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

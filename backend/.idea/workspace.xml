@@ -2,15 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c87b2b28-54da-4892-9865-f22de761c1c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/img/icons/android-chrome-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/img/icons/android-chrome-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/img/icons/apple-touch-icon-120x120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/img/icons/apple-touch-icon-152x152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/img/icons/apple-touch-icon-180x180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/img/icons/apple-touch-icon-60x60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/img/icons/apple-touch-icon-76x76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/img/icons/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/img/icons/favicon-16x16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/img/icons/favicon-32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/img/icons/msapplication-icon-144x144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/img/icons/mstile-150x150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/img/icons/safari-pinned-tab.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/precache-manifest.48afc55d133d37153b67b93cc621ea4a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/service-worker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/static/css/app.907e3620.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/static/js/about.a807c8cf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/static/js/about.a807c8cf.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/static/js/app.c30372bd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/static/js/app.c30372bd.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/static/js/chunk-vendors.bb16c84f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../distView/static/js/chunk-vendors.bb16c84f.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/views/self/self-info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/views/self/self-info.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/views/work/work-add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/views/work/work-add.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../view/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../view/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../view/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../view/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../view/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../view/src/components/HelloWorld.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../view/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../view/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../view/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/../view/src/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../view/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../view/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../view/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../view/vue.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../view/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../view/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-95">
+              <first_editor>
                 <caret column="10" selection-start-column="10" selection-end-column="10" />
               </first_editor>
               <second_editor />
@@ -41,11 +65,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="17" column="89" selection-start-line="17" selection-start-column="89" selection-end-line="17" selection-end-column="89" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="117" column="44" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
+            <state relative-caret-position="285">
+              <caret line="341" column="29" selection-start-line="341" selection-start-column="29" selection-end-line="341" selection-end-column="29" />
               <folding>
                 <element signature="e#143#244#0" expanded="true" />
               </folding>
@@ -76,10 +109,11 @@
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/admin.py" />
+        <option value="$PROJECT_DIR$/view.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="394" />
     <option name="y" value="21" />
     <option name="width" value="973" />
@@ -124,8 +158,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\python\cooqi\backend\YMLS" />
       <recent name="E:\python\cooqi\backend" />
+      <recent name="E:\python\cooqi\backend\YMLS" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -154,18 +188,17 @@
       <workItem from="1548204246863" duration="6663000" />
       <workItem from="1548291602637" duration="18308000" />
       <workItem from="1553062538870" duration="2156000" />
-      <workItem from="1555551787924" duration="491000" />
+      <workItem from="1555551787924" duration="4171000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35520000" />
+    <option name="totallyTimeSpent" value="39200000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="394" y="21" width="973" height="820" extended-state="1" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2694414" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15809768" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -179,7 +212,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.26200873" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2422611" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -210,6 +243,16 @@
     <entry file="file://$PROJECT_DIR$/YMLS/workDetail.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="10" selection-start-column="10" selection-end-column="10" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -219,21 +262,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="117" column="44" selection-start-line="117" selection-start-column="44" selection-end-line="117" selection-end-column="44" />
+        <state relative-caret-position="285">
+          <caret line="341" column="29" selection-start-line="341" selection-start-column="29" selection-end-line="341" selection-end-column="29" />
           <folding>
             <element signature="e#143#244#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-95">
-            <caret column="10" selection-start-column="10" selection-end-column="10" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="17" column="89" selection-start-line="17" selection-start-column="89" selection-end-line="17" selection-end-column="89" />
         </state>
       </provider>
     </entry>
