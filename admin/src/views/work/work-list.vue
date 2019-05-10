@@ -6,8 +6,8 @@
 <template>
     <div>
         <div class="btn-box">
-            <Button type="primary" icon="md-add" @click="addWork">添加作品</Button>
-            <Button type="error" icon="ios-trash-outline" @click="delAll">删除</Button>
+            <i-button type="primary" icon="md-add" @click="addWork">添加作品</i-button>
+            <i-button type="error" icon="ios-trash-outline" @click="delAll">删除</i-button>
         </div>
         <Menu mode="horizontal" active-name="" @on-select="fileStatus">
             <MenuItem name="">
@@ -23,7 +23,7 @@
                 已公开
             </MenuItem>
         </Menu>
-        <Table :columns="columns10" :data="data" :loading="loading" @on-selection-change="selectChange"></Table>
+        <i-table :columns="columns10" :data="data" :loading="loading" @on-selection-change="selectChange"></i-table>
         <div style="margin: 10px;overflow: hidden">
             <div style="float: right;">
                 <Page :total="total" :current="current" show-total :page-size="pageSize" @on-change="changePage"></Page>
@@ -106,7 +106,7 @@
                         align: 'center',
                         render: (h, params) => {
                             return h('div', [
-                                h('Button', {
+                                h('i-button', {
                                     props: {
                                         type: 'primary',
                                         size: 'small'
@@ -120,7 +120,7 @@
                                         }
                                     }
                                 }, '编辑'),
-                                h('Button', {
+                                h('i-button', {
                                     props: {
                                         type: 'error',
                                         size: 'small'
@@ -134,9 +134,9 @@
                                         }
                                     }
                                 }, '删除'),
-                                h('Button', {
+                                h('i-button', {
                                     props: {
-                                        type:params.row.status?'':'warning',
+                                        type:params.row.status?'dashed':'warning',
                                         size: 'small'
                                     },
                                     on: {

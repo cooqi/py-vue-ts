@@ -2,39 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c87b2b28-54da-4892-9865-f22de761c1c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/img/icons/android-chrome-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/img/icons/android-chrome-512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/img/icons/apple-touch-icon-120x120.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/img/icons/apple-touch-icon-152x152.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/img/icons/apple-touch-icon-180x180.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/img/icons/apple-touch-icon-60x60.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/img/icons/apple-touch-icon-76x76.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/img/icons/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/img/icons/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/img/icons/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/img/icons/msapplication-icon-144x144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/img/icons/mstile-150x150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/img/icons/safari-pinned-tab.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/precache-manifest.48afc55d133d37153b67b93cc621ea4a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/service-worker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/static/css/app.907e3620.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/static/js/about.a807c8cf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/static/js/about.a807c8cf.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/static/js/app.c30372bd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/static/js/app.c30372bd.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/static/js/chunk-vendors.bb16c84f.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../distView/static/js/chunk-vendors.bb16c84f.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/views/self/self-info.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/views/self/self-info.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/src/views/work/work-add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/views/work/work-add.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../view/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../view/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../view/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../view/src/views/Home.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +45,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="6384">
               <caret line="341" column="29" selection-start-line="341" selection-start-column="29" selection-end-line="341" selection-end-column="29" />
               <folding>
                 <element signature="e#143#244#0" expanded="true" />
@@ -113,7 +81,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="394" />
     <option name="y" value="21" />
     <option name="width" value="973" />
@@ -125,7 +93,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -147,6 +114,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -188,17 +156,18 @@
       <workItem from="1548204246863" duration="6663000" />
       <workItem from="1548291602637" duration="18308000" />
       <workItem from="1553062538870" duration="2156000" />
-      <workItem from="1555551787924" duration="4171000" />
+      <workItem from="1555551787924" duration="5367000" />
+      <workItem from="1557306739077" duration="715000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39200000" />
+    <option name="totallyTimeSpent" value="41111000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15809768" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1600257" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -243,6 +212,13 @@
     <entry file="file://$PROJECT_DIR$/YMLS/workDetail.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="85" selection-start-line="6" selection-start-column="85" selection-end-line="6" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -253,16 +229,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="85" selection-start-line="6" selection-start-column="85" selection-end-line="6" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="6384">
           <caret line="341" column="29" selection-start-line="341" selection-start-column="29" selection-end-line="341" selection-end-column="29" />
           <folding>
             <element signature="e#143#244#0" expanded="true" />

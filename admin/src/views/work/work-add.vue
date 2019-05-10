@@ -7,7 +7,7 @@
 <template>
     <div>
         <div style="text-align: left;margin-bottom: 20px;">
-            <Button type="primary" icon="ios-arrow-back" @click="gotoList">返回列表</Button>
+            <i-button type="primary" icon="ios-arrow-back" @click="gotoList">返回列表</i-button>
         </div>
         <div class="add-input">
             <Input v-model="work.prj_info" placeholder="Enter projectName or baseInfo..." />
@@ -25,10 +25,10 @@
                 <span slot="close">不公开</span>
             </iSwitch>
         </div>
-        <Button type="primary"  @click="add" :loading="loading">
+        <i-button type="primary"  @click="add" :loading="loading">
             <span v-if="!loading">Add!</span>
             <span v-else>Loading...</span>
-        </Button>
+        </i-button>
 </div>
 </template>
 

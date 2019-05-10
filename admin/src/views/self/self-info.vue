@@ -12,7 +12,7 @@
         <Input v-model="info.work_year" placeholder="Enter work time year..." style="width: 300px" />
         <Input v-model="info.self_introduction" placeholder="Enter self introduction..." type="textarea" :autosize="{minRows: 2,maxRows: 5}"  />
         <Input v-model="info.self_work_intro" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter self work intro..." />
-        <Button type="primary" @click="edit_info">修改</Button>
+        <i-button type="primary" @click="edit_info">修改</i-button>
     </div>
 </template>
 

@@ -10,10 +10,10 @@
             <h3>管理系统登录</h3>
             <Input prefix="ios-contact" placeholder="Enter name" style="width: 100%;margin-bottom: 15px" v-model="username"/>
             <Input prefix="md-finger-print" placeholder="Enter password" style="width: 100%;margin-bottom: 15px" v-model="password"/>
-            <Button type="primary" :loading="loading" icon="ios-power" @click="login">
+            <i-button type="primary" :loading="loading" icon="ios-power" @click="login">
                 <span v-if="!loading">登录</span>
                 <span v-else>登陆中</span>
-            </Button>
+            </i-button>
         </div>
     </div>
 </template>
